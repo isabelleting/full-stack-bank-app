@@ -1,0 +1,120 @@
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  text-align: center;
+  font-family: "Lucida handwriting", serif;
+}
+
+body {
+  background-color: floralwhite;
+  padding-top: 5rem;
+}
+
+#createaccount:hover::after {
+  display: block;
+  color: black;
+  content: "Create an account here";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
+#login:hover::after {
+  display: block;
+  color: black;
+  content: "Sign in to your account here";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
+#deposit:hover::after {
+  display: block;
+  color: black;
+  content: "Deposit into your account";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
+#withdraw:hover::after {
+  display: block;
+  color: black;
+  content: "Withdraw from your account";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
+#data:hover::after {
+  display: block;
+  color: black;
+  content: "Check account balance";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
+a:visited {
+  color: floralwhite;
+}
+
+#nav-top {
+  color: black;
+}
+
+.container-fluid {
+  background-color: rgb(200, 51, 51);
+  font-family: "Lucida handwriting", serif;
+  font-size: 1.2em;
+}
+
+.card {
+  position: relative;
+  top: 350px;
+  font-family: "Lucida handwriting", serif;
+  background-color: rgb(238, 233, 215);
+}
+
+.card-header {
+  font-size: 1.5em;
+}
+
+#submit-input-btn {
+  color: black;
+  scale: 0.9;
+  font-size: 1.2em;
+}
+
+#account-submit-btn {
+  font-size: 1.2em;
+}
+
+#signin-submit-btn {
+  font-size: 1.2em;
+  // position: relative;
+  // left: 5px;
+}
+
+#google-submit-btn{
+  font-size: 1.2em;
+  // position: relative;
+  // left: 55px;
+}
+
+#successAlert {
+  width: 65%;
+  text-align: center;
+  position: relative;
+  left: 150px;
+  background-color: rgb(148, 230, 148);
+  font-size: 1.1em;
+}
+
+#errorAlert {
+  font-size: 1.1em;
+}
+
+#sign-in-alert {
+  font-size: 1.2em;
+}
+
+.form-label {
+  font-size: 1.2em;
+}
+
