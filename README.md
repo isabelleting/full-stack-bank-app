@@ -12,6 +12,7 @@ A full MERN stack bank project with MIT xPro. Built with Vite + React and Bootst
 
 ## Screenshots
 
+<img width="1408" alt="Screenshot 2024-06-21 at 10 17 43 PM" src="https://github.com/isabelleting/full-stack-bank-app/assets/144510802/aab2dd02-dc41-4f09-a3d5-46ce2c326ff5">
 
 ## Technology used:
 
