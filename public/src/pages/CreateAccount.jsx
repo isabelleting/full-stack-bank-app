@@ -38,8 +38,6 @@ function CreateAccount(){
 
   const handleChange = (e) =>{
     const { name, value } = e.target;
-    setErrorMessage('')
-
     if (name==='name') {
       setName(value);
     }
@@ -50,6 +48,7 @@ function CreateAccount(){
       setPassword(value);
     }
 
+    setErrorMessage('')
   }
 
   function handleCreate(event){
@@ -58,7 +57,6 @@ function CreateAccount(){
     setErrorMessage('');
     setSuccessMessage('');
    
-    console.log(name,email,password);
     if (!validate(name,     'Full Name'))   return;
     if (!validate(email,    'Email'))       return;
     if (!validate(password, 'Password'))    return;
@@ -69,7 +67,6 @@ function CreateAccount(){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            console.log('New user:', data);
             setSuccessMessage('Account Created!')
 
             setLoggedInUser(data);

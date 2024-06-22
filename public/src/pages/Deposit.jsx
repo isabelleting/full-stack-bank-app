@@ -67,7 +67,6 @@ function Deposit(){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            console.log('Deposit user:', data.value);
             setSuccessMessage(`$${deposit} Deposit Successful!`);
             setVisibleAlert(true);
             setValidTransaction(false);

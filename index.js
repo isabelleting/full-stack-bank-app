@@ -2,6 +2,7 @@ import express from 'express';
 const app     = express();
 import cors from 'cors';
 import { create, find, update, createGoogle } from './dal.js';
+import bcrypt from 'bcrypt';
 
 import fs from 'fs';
 import path from 'path';
@@ -29,7 +30,6 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
             else{
                 create(req.params.name,req.params.email,req.params.password)
                     .then((user) => {
-                        console.log(user);
                         res.send(user);            
                     });            
             }
@@ -43,12 +43,15 @@ app.get('/account/login/:email/:password', function (req, res) {
             .then((user) => {
 
             if(user.length > 0){
-                if (user[0].password === req.params.password){
-                    res.send(user[0]);
-                }
-                else{
-                    res.send('Login failed: wrong password');
-                }
+                bcrypt.compare(req.params.password, user[0].password ).then(function(result) {
+                    // result == true
+                    if (result){
+                        res.send(user[0]);
+                    }
+                    else{
+                        res.send('Login failed: wrong password');
+                    }
+                });
             }
             else{
                 res.send('Login failed: user not found');
@@ -60,7 +63,6 @@ app.get('/account/login/:email/:password', function (req, res) {
 app.get('/account/find/:email', function (req, res) {
     find(req.params.email)
         .then((user) => {
-            console.log(user);
             res.send(user);
     });
 });
@@ -71,7 +73,6 @@ app.get('/account/update/:email/:amount', function (req, res) {
 
     update(req.params.email, amount)
         .then((response) => {
-            console.log(response);
             res.send(response);
     });    
 });
@@ -87,7 +88,6 @@ app.get('/account/google/:name/:email', function (req, res) {
             else{                     
                 createGoogle(req.params.name,req.params.email)
                     .then((user) => {
-                        console.log(user);
                         res.send(user);            
                     });    
             }

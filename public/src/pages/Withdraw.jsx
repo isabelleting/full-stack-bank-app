@@ -72,7 +72,6 @@ function Withdraw(){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            console.log('Withdraw user:', data.value);
             setSuccessMessage(`-$${deposit} Withdraw Processed!`);
             setVisibleAlert(true);
             setValidTransaction(false);
@@ -122,7 +121,7 @@ function Withdraw(){
                   <br></br>
                   <br></br>
                   <br></br>
-                  <h3>Please sign in or create an account to make a deposit.</h3>
+                  <h3>Please sign in or create an account to make a withdraw.</h3>
                 </div>
          )}
     />    

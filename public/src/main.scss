@@ -13,7 +13,7 @@ body {
 #createaccount:hover::after {
   display: block;
   color: black;
-  content: "Create an account here";
+  content: "Create an account";
   background-color: floralwhite;
   font-size: 0.9em;
 }
@@ -21,7 +21,7 @@ body {
 #login:hover::after {
   display: block;
   color: black;
-  content: "Sign in to your account here";
+  content: "Sign in to your account";
   background-color: floralwhite;
   font-size: 0.9em;
 }

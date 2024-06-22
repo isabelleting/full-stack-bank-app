@@ -6,8 +6,9 @@ A full MERN stack bank project with MIT xPro. Built with Vite + React and Bootst
 
 ## Installation Guidelines
 
-- First **git clone** this repo, and run **npm install**. Then **cd client**, and run **npm install**.
-- Run **npm start** to start the Express server and navigate to **localhost:3000** to use this bank app. 
+- First **git clone** this repo, **cd full-stack-bank-app**, and run **npm install**. 
+- Then **cd public**, run **npm install**, then **npm run build**.
+- Run **npm start** in **full-stack-bank-app** directory to start the Express server and navigate to **localhost:3000** to use this bank app. 
 
 ## Screenshots
 
@@ -19,16 +20,16 @@ A full MERN stack bank project with MIT xPro. Built with Vite + React and Bootst
 - Bootstrap
 - Node.js
 - Express
-- MongoDB
+- MongoDB Atlas
+- Bcrypt
 - Swagger
-- Cors
 - Dotenv
 
 ## Features and Future Improvements
 
 - Full stack banking application with options to Create Account, Login, oAuth Login with Google, Deposit, Withdraw, and Check Balance.
 
-- 
+- Future feature where users can transfer money between accounts or to other accounts. 
 
 ## License
 

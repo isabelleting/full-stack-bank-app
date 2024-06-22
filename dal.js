@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import { MongoClient } from 'mongodb';
 
+import bcrypt from 'bcrypt';
+
 const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@belle-bank.me7fxxl.mongodb.net/?retryWrites=true&w=majority&appName=belle-bank`;
 const client = new MongoClient(url);
 
@@ -12,7 +14,7 @@ async function main() {
     const db = client.db(dbName);
     const collection = db.collection('users');
   
-    return 'done.';
+    return 'Done.';
 }
 
 main()
@@ -24,11 +26,16 @@ function create(name, email, password){
     return new Promise((resolve,reject) => {
         let db = client.db(dbName);
         const collection = db.collection('users');
-        const doc = {name, email, password, balance: 1000};
         
-        collection.insertOne(doc, {w:1}, function(err, result) {
-            err ? reject(err) : resolve(doc);
-    })
+        const saltRounds = 10;
+
+        bcrypt.hash(password, saltRounds).then(function(hash) {
+            const doc = {name, email, password: hash, balance: 0};
+            
+            collection.insertOne(doc, {w:1}, function(err, result) {
+                err ? reject(err) : resolve(doc);
+            })
+        })
     })
 }
 
@@ -64,7 +71,7 @@ function createGoogle(name, email){
     return new Promise((resolve,reject) => {
         let db = client.db(dbName);
         const collection = db.collection('users');
-        const doc = {name, email, balance: 1000};
+        const doc = {name, email, balance: 0};
         
         collection.insertOne(doc, {w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);

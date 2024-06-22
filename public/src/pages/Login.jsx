@@ -51,6 +51,8 @@ function Login(){
         else{
             setDisable(true)
         }
+
+        setErrorMessage('');
     }
 
     const handleSubmit = (event) => {
@@ -73,7 +75,6 @@ function Login(){
         .then(text => {
             try {
                 const data = JSON.parse(text);
-                console.log('User:', data);
                 setDisable(false);
                 setSuccessMessage('You have signed in!');
                 setEmail('');
@@ -106,14 +107,12 @@ function Login(){
             const token = credential.accessToken;
 
             const user = result.user;
-            console.log(user);
 
             fetch(`/account/google/${user.displayName}/${user.email}`)
             .then(response => response.text())
             .then(text => {
                 try {
                     const data = JSON.parse(text);
-                    console.log('Google user:', data);
                     setSuccessMessage('You have signed in!')
         
                     setLoggedInUser(data);
@@ -132,7 +131,6 @@ function Login(){
     auth.onAuthStateChanged((firebaseUser) => {
         
         if (firebaseUser){
-            console.log('Firebase user:', firebaseUser);
             auth.signOut();
         }
         else {
@@ -145,7 +143,6 @@ function Login(){
         setPassword('');
         setShow(true);
         
-        auth.signOut();
         setLoggedInUser('');
       }
       
