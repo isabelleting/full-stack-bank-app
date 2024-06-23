@@ -131,7 +131,7 @@ function Login(){
     auth.onAuthStateChanged((firebaseUser) => {
         
         if (firebaseUser){
-            auth.signOut();
+            console.log("User signed in");
         }
         else {
             console.log("Google user is not logged in");
@@ -143,6 +143,7 @@ function Login(){
         setPassword('');
         setShow(true);
         
+        auth.signOut();
         setLoggedInUser('');
       }
       
