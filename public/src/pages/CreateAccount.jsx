@@ -8,7 +8,7 @@ function CreateAccount(){
   const [password, setPassword]   = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const { bank, setLoggedInUser } = useBankContext();
+  const { bank, setLoggedInUser, auth } = useBankContext();
 
   useEffect(() => {
     if(bank.loggedInUser){
@@ -86,6 +86,8 @@ function CreateAccount(){
     setEmail('');
     setPassword('');
     setShow(true);
+    
+    auth.signOut();
     setLoggedInUser('');
   }
   

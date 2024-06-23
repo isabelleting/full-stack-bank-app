@@ -21,7 +21,7 @@ function Deposit(){
         .then(text => {
             try {
                 const data = JSON.parse(text);
-                setAmount(data[0].balance);
+                setAmount(data.balance);
             } catch(err) {
                 console.log('err:', text);
             }

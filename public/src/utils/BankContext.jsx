@@ -1,5 +1,9 @@
 import { createContext, useContext, useState } from "react";
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+  
+
 const BankContext = createContext();
 
 export const useBankContext = () => useContext(BankContext);
@@ -15,10 +19,23 @@ export const BankProvider = ({ children }) => {
         });
     }
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyAHVz16jq7U9wqfPpECrnOa4QTfkCTP1aQ",
+        authDomain: "courso-18766.firebaseapp.com",
+        projectId: "courso-18766",
+        storageBucket: "courso-18766.appspot.com",
+        messagingSenderId: "224457010172",
+        appId: "1:224457010172:web:ec0bd6b7cadd156ec36079"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
     return (
         <BankContext.Provider value={{
             bank,
             setLoggedInUser,
+            auth,
         }}>
             {children}
         </BankContext.Provider>

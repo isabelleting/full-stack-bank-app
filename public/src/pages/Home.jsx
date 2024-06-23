@@ -3,7 +3,7 @@ import { Card, useBankContext, } from "../utils/BankContext";
 
 function Home(){
   const [show, setShow] = useState(true);
-  const { bank, setLoggedInUser} = useBankContext();
+  const { bank, setLoggedInUser, auth } = useBankContext();
 
   useEffect(() => {
     if(bank.loggedInUser){
@@ -13,6 +13,8 @@ function Home(){
 
   function clearForm(){
     setShow(true);
+
+    auth.signOut();
     setLoggedInUser('');
   }
 

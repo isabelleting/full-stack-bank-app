@@ -63,7 +63,7 @@ app.get('/account/login/:email/:password', function (req, res) {
 app.get('/account/find/:email', function (req, res) {
     find(req.params.email)
         .then((user) => {
-            res.send(user);
+            res.send(user[0]);
     });
 });
 
@@ -83,8 +83,8 @@ app.get('/account/google/:name/:email', function (req, res) {
         .then((user) => {
 
             if(user.length > 0){
-                res.send(user[0]);    
-        }
+                res.send(user[0]); 
+            }
             else{                     
                 createGoogle(req.params.name,req.params.email)
                     .then((user) => {
