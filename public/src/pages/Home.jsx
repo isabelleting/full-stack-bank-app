@@ -36,7 +36,7 @@ function Home(){
             <br></br>
             <h4>Deposit, Withdraw, or Check Account Balance.</h4>
             <br></br>
-            <button type="submit" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
+            <button type="button" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
             </>
       )}
       body={(<img src="bank.png" width="300px" className="img-fluid" alt="Bank Photo"/>)} 

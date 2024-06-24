@@ -134,7 +134,7 @@ function CreateAccount(){
                         </div>      
                     )}
                       <br></br>
-                  <button type="submit" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
+                  <button type="button" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
                       <br></br>
                       <br></br>
                   </>

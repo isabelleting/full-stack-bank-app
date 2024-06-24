@@ -81,8 +81,9 @@ function Login(){
         });
     }
 
-    const handleGoogleSubmit = (e) => {
-        console.log("google sign in clicked");
+    const handleGoogleSubmit = (event) => {
+        console.log("Google sign in clicked");
+        event.preventDefault();
 
         setSuccessMessage('');
         
@@ -121,7 +122,7 @@ function Login(){
             console.log("Google user signed in");
         }
         else {
-            console.log("Google user is not logged in");
+            console.log("Google user signed out");
         }
     });
 
@@ -150,10 +151,10 @@ function Login(){
                         <label htmlFor="inputPassword" className="form-label">Password</label>
                         <input type="password" className="form-control" id="inputPassword" name="password" value={password} onChange={handleChange} />
                     </div>
-                    <button type="submit" id="signin-submit-btn" disabled={!disable} className="btn btn-light" onClick={handleSubmit}>Sign In</button>
+                    <button type="button" id="signin-submit-btn" disabled={!disable} className="btn btn-light" onClick={handleSubmit}>Sign In</button>
                     <br></br>
                     <br></br>
-                    <button type="submit" id="google-submit-btn" className="btn btn-light" onClick={handleGoogleSubmit}>Sign In with Google</button>
+                    <button type="button" id="google-submit-btn" className="btn btn-light" onClick={handleGoogleSubmit}>Sign In with Google</button>
                     <br></br>
                     {errorMessage && (
                         <div className="mt-2 alert alert-danger" id ="errorAlert" role="alert">
@@ -177,7 +178,7 @@ function Login(){
                         </div>      
                      )}
                     <br></br>
-                    <button type="submit" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
+                    <button type="button" id="account-submit-btn" className="btn btn-light" onClick={clearForm}>Sign Out</button>
                     <br></br>
                     <br></br>
                 </>
