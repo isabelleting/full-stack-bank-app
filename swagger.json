@@ -2,8 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0", 
-        "title": "Capstone Bank Project Docs",
-        "description": "My Bank Project User Application API",
+        "title": "Capstone Bank Project API Docs",
         "license": {
             "name": "MIT",
             "url": "https://opensource.org/licenses/MIT"
@@ -13,8 +12,7 @@
     "basePath": "/",
     "tags": [
         {
-            "name": "Belle Bank",
-            "description": "API for users in the database"
+            "name": "Belle Bank"
         }
     ],
     "schemes": [
@@ -34,29 +32,27 @@
                     "name": "name",
                     "in": "path",
                     "required": true,
-                    "description": "name of user",
+                    "description": "User name",
                     "type": "string"
-                   
                 },
                 {
                     "name": "email",
                     "in": "path",
                     "required": true,
-                    "description": "email of user",
+                    "description": "User email",
                     "type": "string"
                 },
                 {
                     "name": "password",
                     "in": "path",
                     "required": true,
-                    "description": "password of user",
+                    "description": "User password",
                     "type": "string"
                 }
             ],
             "get": {
                 "tags": ["Belle Bank"],
                 "summary": "Create new account",
-                "description": "Creating a new user with name, email, and password",
                 "responses": {
                     "200": {
                         "description": "New user created",
@@ -73,21 +69,20 @@
                     "name": "email",
                     "in": "path",
                     "required": true,
-                    "description": "email of user",
+                    "description": "User email",
                     "type": "string"
                 },
                 {
                     "name": "password",
                     "in": "path",
                     "required": true,
-                    "description": "password of user",
+                    "description": "User password",
                     "type": "string"
                 }
             ],
             "get": {
                 "tags": ["Belle Bank"],
                 "summary": "Sign into account",
-                "description": "Sign into account",
                 "produces": [
                     "application/json"
                 ],
@@ -107,27 +102,26 @@
                     "name": "email",
                     "in": "path",
                     "required": true,
-                    "description": "email of user",
+                    "description": "User email",
                     "type": "string"
                 },
                 {
                     "name": "amount",
                     "in": "path",
                     "required": true,
-                    "description": "amount added to user balance",
+                    "description": "Amount added to user balance",
                     "type": "integer"
                 }
             ],
             "get": {
                 "tags": ["Belle Bank"],
                 "summary": "Deposit into user's balance",
-                "description": "Update a users balance by email",
                  "schema": {
                         "$ref": "#/definitions/Bank"
                     },
                     "responses": {
                         "200": {
-                            "description": "Balance updated",
+                            "description": "User balance updated",
                             "schema": {
                                 "$ref": "#/definitions/Bank"
                             }
@@ -143,27 +137,26 @@
                     "name": "email",
                     "in": "path",
                     "required": true,
-                    "description": "email of user",
+                    "description": "User email",
                     "type": "string"
                 },
                 {
                     "name": "amount",
                     "in": "path",
                     "required": true,
-                    "description": "amount to withdraw from user balance",
+                    "description": "Amount to withdraw from user balance",
                     "type": "integer"
                 }
             ],
             "get": {
                 "tags": ["Belle Bank"],
                 "summary": "Withdraw from user's balance",
-                "description": "Update a users balance by email",
                  "schema": {
                         "$ref": "#/definitions/Bank"
                     },
                     "responses": {
                         "200": {
-                            "description": "Balance updated",
+                            "description": "User balance updated",
                             "schema": {
                                 "$ref": "#/definitions/Bank"
                             }
@@ -173,13 +166,36 @@
             }
 
         },
+        "/account/find/{email}": {
+            "parameters": [
+                {
+                    "name": "email",
+                    "in": "path",
+                    "required": true,
+                    "description": "User email",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": ["Belle Bank"],
+                "summary": "Find user in database",
+                "responses": {
+                    "200": {
+                        "description": "User returned",
+                        "schema": {
+                            "$ref": "#/definitions/Bank"
+                        }
+                    }
+                }
+            }
+        },
         "/account/google/{name}/{email}": {
             "parameters": [
                 {
                     "name": "name",
                     "in": "path",
                     "required": true,
-                    "description": "name of user",
+                    "description": "User name",
                     "type": "string"
                    
                 },
@@ -187,17 +203,16 @@
                     "name": "email",
                     "in": "path",
                     "required": true,
-                    "description": "email of user",
+                    "description": "User email",
                     "type": "string"
                 }
             ],
             "get": {
                 "tags": ["Belle Bank"],
                 "summary": "Create account or Sign in with Google",
-                "description": "Creating a new user or signing in using Google",
                 "responses": {
                     "200": {
-                        "description": "Google user created",
+                        "description": "Google user created/signed in",
                         "schema": {
                             "$ref": "#/definitions/Bank"
                         }
@@ -206,8 +221,7 @@
             }
         }
     },
-
-    "definitions": {
+     "definitions": {
         "Bank": {
             "required": ["name","email","password","amount"],
             "properties": {
