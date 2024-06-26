@@ -43,7 +43,7 @@ app.get('/account/login/:email/:password', function (req, res) {
             .then((user) => {
 
             if(user.length > 0){
-                bcrypt.compare(req.params.password, user[0].password ).then(function(result) {
+                bcrypt.compare(req.params.password, user[0].password).then(function(result) {
                     // result == true
                     if (result){
                         res.send(user[0]);

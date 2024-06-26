@@ -20,12 +20,12 @@ export const BankProvider = ({ children }) => {
     }
 
     const firebaseConfig = {
-        apiKey: "AIzaSyAHVz16jq7U9wqfPpECrnOa4QTfkCTP1aQ",
-        authDomain: "courso-18766.firebaseapp.com",
-        projectId: "courso-18766",
-        storageBucket: "courso-18766.appspot.com",
-        messagingSenderId: "224457010172",
-        appId: "1:224457010172:web:ec0bd6b7cadd156ec36079"
+        apiKey: "AIzaSyBqyC_y0cSrGLspSgYg1hywOROGQEYt8t8",
+        authDomain: "belle-bank.firebaseapp.com",
+        projectId: "belle-bank",
+        storageBucket: "belle-bank.appspot.com",
+        messagingSenderId: "310293689398",
+        appId: "1:310293689398:web:45609644946b69335f5497"
     };
 
     const app = initializeApp(firebaseConfig);

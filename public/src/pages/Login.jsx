@@ -117,7 +117,6 @@ function Login(){
     }
    
     auth.onAuthStateChanged((firebaseUser) => {
-        
         if (firebaseUser){
             console.log("Google user signed in");
         }

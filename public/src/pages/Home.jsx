@@ -27,7 +27,7 @@ function Home(){
       title= { show ? (
             <> <br></br> <h3>Welcome to Belle Bank</h3> </>
               ):(
-            <> <br></br> <h3>Welcome to Belle Bank {bank.loggedInUser.name}.</h3> </> 
+            <> <br></br> <h3>Welcome to Belle Bank {bank.loggedInUser.name}</h3> </> 
       )}
       text={ show ? ( 
             <h4>Please sign in or create an account to make a transaction.</h4>

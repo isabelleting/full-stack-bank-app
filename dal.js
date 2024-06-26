@@ -19,7 +19,6 @@ async function main() {
 main()
   .then(console.log)
   .catch(console.error)
-//   .finally(() => client.close());
 
 function create(name, email, password){
     return new Promise((resolve,reject) => {
