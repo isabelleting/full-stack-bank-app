@@ -26,6 +26,14 @@ body {
   font-size: 0.9em;
 }
 
+#signout:hover::after {
+  display: block;
+  color: black;
+  content: "Sign out from your account";
+  background-color: floralwhite;
+  font-size: 0.9em;
+}
+
 #deposit:hover::after {
   display: block;
   color: black;
@@ -48,6 +56,11 @@ body {
   content: "Check account balance";
   background-color: floralwhite;
   font-size: 0.9em;
+}
+
+.ms-auto {
+  color: floralwhite;
+  font-family: "Lucida handwriting", serif;
 }
 
 a:visited {
@@ -87,14 +100,10 @@ a:visited {
 
 #signin-submit-btn {
   font-size: 1.2em;
-  // position: relative;
-  // left: 5px;
 }
 
 #google-submit-btn{
   font-size: 1.2em;
-  // position: relative;
-  // left: 55px;
 }
 
 #successAlert {

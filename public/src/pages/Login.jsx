@@ -139,7 +139,11 @@ function Login(){
             width="55"
             txtcolor="black"
             photo={(<img src="bank.png" width="40px" height="40"/>)}
-            header="Sign In"
+            header= {show ? ( 
+                "Sign in"
+            ):(
+                "Sign Out"
+            )}
             body={ show ? (
                 <form>
                     <div className="mb-3">

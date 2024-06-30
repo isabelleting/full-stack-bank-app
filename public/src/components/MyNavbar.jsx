@@ -16,12 +16,16 @@ function MyNavbar(){
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" id="createaccount" href="#/CreateAccount/">Create Account</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" id="login" href="#/login/">Login</a>
-          </li>
+          { !bank.loggedInUser && ( 
+            <>
+              <li className="nav-item">
+                <a className="nav-link" id="createaccount" href="#/CreateAccount/">Create Account</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" id="login" href="#/login/">Login</a>
+              </li>
+            </>
+          )} 
           { bank.loggedInUser && ( 
             <>
               <li className="nav-item">
@@ -33,9 +37,21 @@ function MyNavbar(){
               <li className="nav-item">
                 <a className="nav-link" id="data" href="#/data/">Balance</a>
               </li>  
-          </>
+            </>
           )} 
         </ul>
+        { bank.loggedInUser && ( 
+          <>
+            <div className="ms-auto">
+                Welcome: {bank.loggedInUser.name}
+            </div>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" id="signout" href="#/login/">Sign Out</a>
+              </li>
+            </ul>
+         </>             
+        )} 
       </div>
     </div>
   </nav>
