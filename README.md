@@ -1,37 +1,57 @@
-# Full-Stack-Bank-App
+#<img width="40px" alt="bank" src="https://github.com/user-attachments/assets/bebf05da-7ed3-4347-8dd5-c2e286c193f6" /> Full-Stack-Bank-App
 
 ## Description 
 
-A full MERN stack bank project with MIT xPro. Built with Vite + React and Bootstrap, Node.js and Express, and MongoDB Atlas to learn and program across all three tiers. 
+Welcome to Belle Bank. A full MERN stack bank application with MIT xPro. Built with Vite + React and Bootstrap, Node.js and Express, and MongoDB Atlas across all three tiers.\ Deployed to Heroku through Github Actions Continuous Deployment.\
+Live Demo @: https://lei-ting-fullstackbankapp-35b807e11808.herokuapp.com
 
-## Installation Guidelines
+User's can create accounts, sign in, sign in with Google, deposit and withdraw from their accounts, as well as check their balance securely. 
 
-- First **git clone** this repo, **cd full-stack-bank-app**, and run **npm install**. 
-- Then **cd public**, run **npm install**, then **npm run build**.
-- Run **npm start** in **full-stack-bank-app** directory to start the Express server and navigate to **localhost:3000** to use this bank app. 
+Developed features including user authentication, password hashing, data persistence throughout sign in’s, oAuth sign in with Google and Firebase, data abstraction layer for database specific code, success and error alerts, form validation, conditional rendering, Swagger documentation, and responsive design (mobile & desktop). 
+
+## Local Installation Guidelines
+
+- First `git clone` this repo, `cd full-stack-bank-app`, and run `npm install` to install our backened dependencies. 
+- Then `cd public`, run `npm install`, then `npm run build` to build our front end into a static files with Vite.js.
+- Return to **full-stack-bank-app** directory with `cd ..`, and run `npm start` to start the Express server and navigate to **localhost:3000** to use this bank app. 
 
 ## Screenshots
 
 <img width="700" alt="Screenshot 2024-06-21 at 10 34 58 PM" src="https://github.com/isabelleting/full-stack-bank-app/assets/144510802/06dc0659-cd5e-47e5-b4c8-f42e19a0cfbe">
 <img width="700" alt="Screenshot 2024-07-12 at 10 46 17 PM" src="https://github.com/user-attachments/assets/f0bed94f-76ab-443e-8ce0-5ebeef8952b8">
 
-## Technology used:
+## Video Walkthrough
+
+- Front End Architecture: https://youtu.be/BE823tLv4cA 
+- Database & API: https://youtu.be/-zoD9uAgXrg 
+- Deployemnt & Demonstration: https://youtu.be/bKce8JFDJsM 
+
+## Technology used: 
 
 - React.js
-- Vite.js
-- Bootstrap
 - Node.js
 - Express
 - MongoDB Atlas
+- Vite.js
+- Bootstrap
+- Firebase Authentication
 - Bcrypt
+- Heroku
+- Github Actions
 - Swagger
 - Dotenv
+- Docker Desktop (development)
 
-## Features and Future Improvements
+## Additional Features
 
-- Full stack banking application with options to Create Account, Login, oAuth Login with Google, Deposit, Withdraw, and Check Balance.
+- Only create account or sign in is available to the user until they're signed in. Users then can deposit, withdraw, or check their account balance. 
+- User's passwords must be at least 8 characters and are hashed with bCrpyt npm package then stored in MongoDB Atlas.
+- Users can only deposit positive numbers and cannot withdraw more than they have or there's an error alert and the button is disabled. 
+
+## Future Improvements
 
 - Future feature where users can transfer money between accounts or to other accounts. 
+- Transaction history users can view along with their balance. 
 
 ## License
 
