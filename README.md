@@ -7,7 +7,7 @@
 - Live Demo @: https://lei-ting-fullstackbankapp-35b807e11808.herokuapp.com 
 
 <br/>
-<br/>
+
 - User's can create accounts, sign in, sign in with Google, deposit and withdraw from their accounts, as well as check their balance securely.
 
 - Developed features including user authentication, password hashing, data persistence throughout sign in’s, oAuth sign in with Google and Firebase, data abstraction layer for database specific code, success and error alerts, form validation, conditional rendering, Swagger documentation, and responsive design (mobile & desktop). 
