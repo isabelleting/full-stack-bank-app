@@ -1,4 +1,4 @@
-#<img width="40px" alt="bank" src="https://github.com/user-attachments/assets/bebf05da-7ed3-4347-8dd5-c2e286c193f6" /> Full-Stack-Bank-App
+# Full-Stack-Bank-App
 
 ## Description 
 
